@@ -15,7 +15,14 @@ public class Scenario {
 	private Event head;
 	private GUIManager gui;
 
-	/* TO BE COMPLETED */
+	public Scenario (GUIManager gui, Event startEvent) {
+		this.gui = gui;
+		this.head = startEvent;
+	}
+
+	public String run() {
+
+	}
 
 	/* MAIN */
 	public static void main(String[] args) {
