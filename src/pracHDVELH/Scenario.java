@@ -20,8 +20,20 @@ public class Scenario {
 		this.head = startEvent;
 	}
 
-	public String run() {
+	public Event getHead() {
+		return this.head;
+	}
 
+	public String run() {
+		if (this.getHead() == null) {
+			this.gui.outputErr(this.MSG_EMPTY_SCENARIO);
+		}
+
+		Event currentEvent = this.getHead();
+		while(!currentEvent.isFinal()) currentEvent = currentEvent.run();
+
+		this.gui.outputln(currentEvent.getData());
+		return this.MSG_FINALE;
 	}
 
 	/* MAIN */
@@ -73,7 +85,7 @@ public class Scenario {
 		// ****event3
 		// ...
 
-		int[] mask = { 3, 6, 7 };
+		/* int[] mask = { 3, 6, 7 };
 		Event event4 = new EventRandomSolution(gui, "Random choice of the next event...", mask, "Dice rolling... Roll=",
 				"\nNext event is ");
 		event3.setDaughter(event4, 0);
@@ -81,7 +93,7 @@ public class Scenario {
 		event4.addDaughter(endEvent);
 		event4.addDaughter(event3);
 
-		System.out.println(scenario.run());
+		System.out.println(scenario.run()); */
 	}
 }
 

@@ -55,8 +55,8 @@ public class NodeMultiple {
 	 * @param i        the daughter node's index
 	 */
 	public void setDaughter(NodeMultiple daughter, int i) {
-		if (i < 0 || i > NODE_MAX_ARITY) return;
-		this.daughters[i] = daughter;
+		if (i-1 < 0 || i-1 > NODE_MAX_ARITY) return;
+		this.daughters[i-1] = daughter;
 	}
 
 	/**

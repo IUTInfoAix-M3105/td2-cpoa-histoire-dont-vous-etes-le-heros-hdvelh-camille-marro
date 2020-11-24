@@ -24,6 +24,8 @@ public class GUIManager {
 	out.println(s);
   }
 
+  public void outputErr(String s) { err.println(s);}
+
   /**
    * Concatenates all the given strings and prints them out without any
    * end-of-line character ('\n').
@@ -46,6 +48,8 @@ public class GUIManager {
   public Scanner getInputReader() {
 	return inputReader;
   }
+
+  public void setInputReader(Scanner inputReader) {this.inputReader = inputReader;}
 
   /**
    * Constructor. Sets the GUI to the default system IOs.
